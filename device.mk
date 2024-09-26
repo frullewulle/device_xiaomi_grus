@@ -127,7 +127,7 @@ PRODUCT_PACKAGES += \
 
 # Consumer IR
 PRODUCT_PACKAGES += \
-    android.hardware.ir@1.0-service.xiaomi
+    android.hardware.ir-service.xiaomi
 
 # Device-specific settings
 PRODUCT_PACKAGES += \
@@ -144,9 +144,7 @@ PRODUCT_PACKAGES += \
     hwcomposer.sdm710
 
 PRODUCT_PACKAGES += \
-    android.hardware.memtrack@1.0-impl \
-    android.hardware.memtrack@1.0-service \
-    memtrack.sdm710
+    vendor.qti.hardware.memtrack-service
 
 PRODUCT_PACKAGES += \
     libdisplayconfig.qti \
