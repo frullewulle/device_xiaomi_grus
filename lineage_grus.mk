@@ -22,6 +22,10 @@ PRODUCT_MODEL := Mi 9 SE
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    BuildDesc="grus-user 11 RKQ1.200826.002 V12.5.1.0.RFBMIXM release-keys" \
+    BuildFingerprint=Xiaomi/grus/grus:11/RKQ1.200826.002/V12.5.1.0.RFBMIXM:user/release-keys
+
 # Device config
 TARGET_HAS_UDFPS := true
 TARGET_ENABLE_BLUR := true
