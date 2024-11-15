@@ -28,24 +28,25 @@ TARGET_ENABLE_BLUR := true
 TARGET_EXCLUDES_AUDIOFX := true
 TARGET_FACE_UNLOCK_SUPPORTED := true
 
+# Build config
+
 # TARGET_BUILD_PACKAGE options:
 # 1 - vanilla (default)
 # 2 - microg
 # 3 - gapps
-TARGET_BUILD_PACKAGE := 2
+TARGET_BUILD_PACKAGE := 1
 
-# TARGET_LAUNCHER options:
-# 1 - stock (default)
-# 2 - lawnchair
-# 3 - pixel (valid only on gapps builds)
-TARGET_LAUNCHER := 2
-
-# GAPPS (valid only for GAPPS builds)
-TARGET_SUPPORTS_QUICK_TAP := true
-TARGET_SUPPORTS_CALL_RECORDING := true
-TARGET_INCLUDE_STOCK_ARCORE := false
-TARGET_INCLUDE_LIVE_WALLPAPERS := false
-# TARGET_SUPPORTS_GOOGLE_RECORDER := true
+ifeq ($(TARGET_BUILD_PACKAGE),3)
+  # (valid only for GAPPS builds)
+  TARGET_INCLUDE_PIXEL_LAUNCHER := true
+  TARGET_SUPPORTS_QUICK_TAP := true
+  TARGET_SUPPORTS_CALL_RECORDING := true
+  TARGET_INCLUDE_STOCK_ARCORE := false
+  TARGET_INCLUDE_LIVE_WALLPAPERS := false
+  TARGET_SUPPORTS_GOOGLE_RECORDER := true
+else
+  TARGET_INCLUDE_LAWNCHAIR := true
+endif
 
 # Debugging
 TARGET_INCLUDE_MATLOG := false
