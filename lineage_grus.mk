@@ -51,6 +51,9 @@ endif
 # Debugging
 TARGET_INCLUDE_MATLOG := false
 
+# Extras
+TARGET_INCLUDE_RIMUSIC := true
+
 # Maintainer
 ALPHA_BUILD_TYPE := Official
 ALPHA_MAINTAINER := elpaablo
