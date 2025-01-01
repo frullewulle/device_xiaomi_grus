@@ -46,9 +46,6 @@ TARGET_USES_YCRCB_CAMERA_ENCODE := true
 
 # Display
 TARGET_HAS_WIDE_COLOR_DISPLAY := true
-TARGET_USES_GRALLOC1 := true
-TARGET_USES_HWC2 := true
-TARGET_USES_ION := true
 ifeq ($(TARGET_HAS_UDFPS),true)
 TARGET_USES_FOD_ZPOS := true
 endif
@@ -82,6 +79,9 @@ TARGET_KERNEL_CONFIG := sdm670-perf_defconfig xiaomi/sdm710-common.config
 
 # Lineage Health
 TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_BYPASS := false
+
+# Media
+TARGET_USES_ION := true
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
