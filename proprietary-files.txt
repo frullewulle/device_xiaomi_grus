@@ -55,10 +55,6 @@ vendor/lib64/libcacertclient.so
 vendor/lib64/libjnihelper.so
 vendor/lib64/vendor.qti.hardware.cacert@1.0.so
 
-# Camera (GCAM required libs) - from Bonito SP2A.220505.008
-vendor/lib/lib_aion_buffer.so|a49aab8cb80f05b64c0c12a3970dba50d2dc4691
-vendor/lib64/lib_aion_buffer.so|3ab3ff99bff2b6f2884da2fc4b0cfa6d69e8e94b
-
 # CDSP
 vendor/bin/cdsprpcd
 vendor/etc/init/vendor.qti.cdsprpc-service.rc
@@ -839,6 +835,7 @@ vendor/lib64/libwfdhdcpcp.so
 
 # WiFi Display (vendor) - from lemonadep - TP1A.220624.003
 vendor/etc/wfdconfig.xml|4f863ac9a71bafff8afc14e8fab26af979bbb1d6
+
 
 # Unpinned blobs from grus-user 11 RKQ1.200826.002 V12.5.1.0.RFBMIXM release-keys
 

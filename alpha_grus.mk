@@ -9,12 +9,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/alpha/config/common_full_phone.mk)
 
 # Inherit from grus device
 $(call inherit-product, device/xiaomi/grus/device.mk)
 
-PRODUCT_NAME := lineage_grus
+PRODUCT_NAME := alpha_grus
 PRODUCT_DEVICE := grus
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_BRAND := Xiaomi
@@ -38,22 +38,25 @@ TARGET_FACE_UNLOCK_SUPPORTED := true
 # 1 - vanilla (default)
 # 2 - microg
 # 3 - gapps
-TARGET_BUILD_PACKAGE := 1
+TARGET_BUILD_PACKAGE := 3
 
+# Launcher
+TARGET_INCLUDE_LAWNCHAIR := false
 ifeq ($(TARGET_BUILD_PACKAGE),3)
-  # (valid only for GAPPS builds)
-  TARGET_INCLUDE_PIXEL_LAUNCHER := true
-  TARGET_SUPPORTS_QUICK_TAP := true
-  TARGET_SUPPORTS_CALL_RECORDING := true
-  TARGET_INCLUDE_STOCK_ARCORE := false
-  TARGET_INCLUDE_LIVE_WALLPAPERS := false
-  TARGET_SUPPORTS_GOOGLE_RECORDER := true
-else
-  TARGET_INCLUDE_LAWNCHAIR := true
+# (valid only for GAPPS builds)
+TARGET_INCLUDE_PIXEL_LAUNCHER := true
+TARGET_SUPPORTS_QUICK_TAP := true
+TARGET_SUPPORTS_CALL_RECORDING := true
+TARGET_INCLUDE_STOCK_ARCORE := false
+TARGET_INCLUDE_LIVE_WALLPAPERS := false
+TARGET_SUPPORTS_GOOGLE_RECORDER := false
 endif
 
 # Debugging
 TARGET_INCLUDE_MATLOG := false
+WITH_ADB_INSECURE := true
+TARGET_BUILD_PERMISSIVE := false
+SELINUX_IGNORE_NEVERALLOWS := false
 
 # Extras
 TARGET_INCLUDE_RIMUSIC := true
@@ -61,10 +64,3 @@ TARGET_INCLUDE_RIMUSIC := true
 # Maintainer
 ALPHA_BUILD_TYPE := Official
 ALPHA_MAINTAINER := elpaablo
-
-PRODUCT_ENFORCE_VINTF_MANIFEST := false
-PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := false
-
-# Dex/ART optimization
-PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := everything
-USE_DEX2OAT_DEBUG := false
