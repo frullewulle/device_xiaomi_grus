@@ -163,7 +163,8 @@ PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey
 
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.4.vendor
+    android.hardware.drm@1.4.vendor \
+    libcrypto_shim.vendor
 
 # fastbootd
 PRODUCT_PACKAGES += \
@@ -263,6 +264,7 @@ PRODUCT_COPY_FILES += \
 
 # Mlipay
 PRODUCT_PACKAGES += \
+    vendor.xiaomi.hardware.mfidoca@1.0.vendor \
     vendor.xiaomi.hardware.mlipay@1.1.vendor \
     vendor.xiaomi.hardware.mtdservice@1.2.vendor
 
@@ -430,12 +432,12 @@ PRODUCT_BOOT_JARS += \
 
 # Thermal
 PRODUCT_PACKAGES += \
-    android.hardware.thermal@2.0-service.qti
+    android.hardware.thermal-service.qti
 
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.3-service.dual_role_usb \
-    android.hardware.usb.gadget@1.2-service-qti
+    android.hardware.usb.gadget-service.qti
 
 PRODUCT_PACKAGES += \
     init.qcom.usb.rc \
@@ -445,10 +447,6 @@ PRODUCT_PACKAGES += \
 # Vibrator
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.vibrator.service
-
-# VNDK
-PRODUCT_COPY_FILES += \
-    prebuilts/vndk/v33/arm64/arch-arm64-armv8-a/shared/vndk-sp/libutils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libutils-v33.so
 
 # Wi-Fi
 PRODUCT_PACKAGES += \
