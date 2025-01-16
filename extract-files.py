@@ -19,7 +19,8 @@ from extract_utils.main import (
 )
 
 namespace_imports = [
-    'device/xiaomi/sdm710-common',
+    'device/xiaomi/grus',
+    'hardware/qcom/sdm845',
     'hardware/qcom-caf/sdm845',
     'hardware/qcom-caf/wlan',
     'hardware/xiaomi',
@@ -85,7 +86,7 @@ blob_fixups: blob_fixups_user_type = {
 }  # fmt: skip
 
 module = ExtractUtilsModule(
-    'sdm710-common',
+    'grus',
     'xiaomi',
     blob_fixups=blob_fixups,
     lib_fixups=lib_fixups,

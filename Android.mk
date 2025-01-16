@@ -6,7 +6,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter grus pyxis xmsirius vela,$(TARGET_DEVICE)),)
+ifeq ($(TARGET_DEVICE),grus)
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
